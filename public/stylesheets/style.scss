@@ -45,6 +45,50 @@ body {
   border-bottom: 1px solid lightgray;
 }
 
+.Navbar__Link-toggle {
+  display: none;
+}
+
+.navbar-nav.on {
+  display: flex;
+}
+
+@media only screen and (max-width: 590px) {
+  // .Navbar__Items,
+  // .Navbar {
+  //   flex-direction: column;
+  // }
+  .navbar-nav {
+    display:none;
+    margin-left: 0;
+  }
+  .ml-auto {
+    margin-left: 1rem !important;
+  }
+  // .Navbar__ToggleShow {
+  //   display: flex;
+  // }
+  .Navbar__Link-toggle {
+    align-self: flex-end;
+    display: contents;
+    position: absolute;
+    cursor: pointer;
+  }
+  .Navbar__Link-toggle img {
+    width: 65px;
+    padding-right: 5%;
+  }
+}
+
+.Navbar_Link {
+  padding-right: 45px;
+  margin: 15px;
+  color: #ffffff;
+  text-decoration: none;
+  color: hsla(0,0%,100%,.5);
+}
+
+
 .link-home {
   font-size: 2.4rem;
   font-family: 'Bangers', cursive;

@@ -31,6 +31,7 @@ router.get("/free-list", (req, res, next) => {
     .catch(next);
 });
 
+/*GET user profile */
 router.get('/profile', (req, res, next) => {
   Resource.find({ _owner: req.user._id })
     .then(resourcesFromOwner => {
@@ -62,10 +63,12 @@ router.get('/profile', (req, res, next) => {
     });
 })
 
+/*Route to display form to add free resource */
 router.get("/add", (req, res, next) => {
   res.render("add-resource");
 });
 
+/*POST a new free resource*/
 router.post("/add", (req, res, next) => {
   //console.log("req.body", req.body);
   //console.log("req.user", req.user);
@@ -88,6 +91,7 @@ router.post("/add", (req, res, next) => {
     })
 })
 
+/*GET details of one specific free resource */
 router.get('/:id/detail', (req, res, next) => {
   Resource.findById(req.params.id)
     .then(resourcesFromDb => {
@@ -123,6 +127,7 @@ router.get('/:id/detail', (req, res, next) => {
     .catch(next)
 })
 
+/*Route to edit one specific free resource (only possible if you are the author) */
 router.get('/:id/edit', (req, res, next) => {
   let resourceId = req.params.id;
   Resource.findById(resourceId)
@@ -135,6 +140,7 @@ router.get('/:id/edit', (req, res, next) => {
     .catch(next)
 })
 
+/*POST updated specific resource */
 router.post('/:id/edit', (req, res, next) => {
   const { category, shortdescr, longdescr, location, date, image } = req.body;
   let resourceId = req.params.id;
@@ -147,6 +153,7 @@ router.post('/:id/edit', (req, res, next) => {
     })
 });
 
+/*Route to edit details of your own user profile*/
 router.get('/editProfile', (req, res, next) => {
   User.findById(req.user.id)
     .then(user => {
@@ -158,6 +165,7 @@ router.get('/editProfile', (req, res, next) => {
     .catch(next)
 })
 
+/*POST updated user profile details */
 router.post('/editProfile', (req, res, next) => {
   const { username, description, profilepic } = req.body;
   User.update({ _id: req.user.id }, { $set: { username, description, profilepic } }, { new: true })
@@ -171,6 +179,7 @@ router.post('/editProfile', (req, res, next) => {
     })
 });
 
+/*Favorize item*/
 router.get('/:id/favorize', (req, res, next) => {
   ////
   //res.redirect('/:id/detail')
@@ -203,6 +212,7 @@ router.get('/:id/favorize', (req, res, next) => {
     .catch(next)
 });
 
+/*DELETE specific free resource*/
 router.post('/:id/delete', (req, res, next) => {
   Resource.findByIdAndRemove(req.params.id)
     .then(resourcefromDb => {
@@ -214,6 +224,7 @@ router.post('/:id/delete', (req, res, next) => {
     .catch(next)
 });
 
+/*REMOVE a specific free resource from favorites */
 router.post('/favorites/:resourceId/delete', (req, res, next) => {
   console.log("REQPARAMS", req.params)
   Favorite.deleteOne({ _resource: req.params.resourceId, _owner: req.user._id })
@@ -223,6 +234,7 @@ router.post('/favorites/:resourceId/delete', (req, res, next) => {
     .catch(next)
 });
 
+/*POST a comment*/
 router.post('/:id/comment', (req, res, next) => {
   const newComment = new Comment({
     text: req.body.comment,
