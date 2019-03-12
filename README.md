@@ -34,6 +34,8 @@ by Alina and Samuele
 
 You need to have NodeJS and MongDB installed on your computer.
 
+###Commands
+
 1. Clone or copy this project
 ```
 $ git clone https://github.com/AlinaKr/Free-Berlin-Project-2-.git
@@ -41,7 +43,6 @@ $ git clone https://github.com/AlinaKr/Free-Berlin-Project-2-.git
 
 2. In the directory of the project run this command:
 
-**To install all the packages**
 ```
 $ npm install
 ```
@@ -55,10 +56,9 @@ MONGODB_URI=mongodb://localhost/27017/freeberlin
 
 4. To get the application up and running open a terminal window and run
 
-**Terminal**
 ```
 $npm run dev // -> # Server running on http://localhost:5000/
 ```
 
 
-###Alternately direct your browser to the live version on [Heroku](https://free-berlin.herokuapp.com). 
+Alternately direct your browser to the live version on [Heroku](https://free-berlin.herokuapp.com). 
