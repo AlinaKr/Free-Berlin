@@ -14,8 +14,6 @@ by Alina and Samuele
 
 ![SS2](./public/Readme/Screenshot2.png)
 
-![SS3](./public/Readme/Screenshot3.png)
-
 ![SS4](./public/Readme/Screenshot4.png)
 
 ![SS5](./public/Readme/Screenshot5.png)
@@ -28,13 +26,15 @@ by Alina and Samuele
 
 ![SS9](./public/Readme/Screenshot9.png)
 
+![SS10](./public/Readme/Screenshot10.png)
+
 
 ## How to run this on your local machine
 ### Prerequisites
 
 You need to have NodeJS and MongDB installed on your computer.
 
-###Commands
+### Commands
 
 1. Clone or copy this project
 ```
@@ -61,4 +61,4 @@ $npm run dev // -> # Server running on http://localhost:5000/
 ```
 
 
-Alternately direct your browser to the live version on [Heroku](https://free-berlin.herokuapp.com). 
+### Alternately direct your browser to the live version on [Heroku](https://free-berlin.herokuapp.com). 
